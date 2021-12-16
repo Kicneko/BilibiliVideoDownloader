@@ -3,7 +3,7 @@ import re
 import json
 import os
 
-#Set origin address
+#Set destination address
 def set_url():
     url = input('Enter video address: ')
     headers.update({'referer':url})
@@ -18,7 +18,7 @@ headers = {
     'range': 'bytes=0-'
 }
 
-#Get video and audio infromation on the html file and replace to the json file 
+#Get video and audio infromation on the html file and convert to the json file
 def getVideoDetail():
     src = requests.get(url=url,headers=headers)
     webtext = src.text
@@ -32,7 +32,7 @@ def getVideoDetail():
     #print('aid: '+aid+'cid: '+cid)
     return json_data,title
 
-# Use the json file to select video and audio address
+# Use the json file to get the video and audio address
 def getVideoLink():
     json_data,_ = getVideoDetail()
     video_url = json_data['data']['dash']['video'][0]['baseUrl']
