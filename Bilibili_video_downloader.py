@@ -60,14 +60,3 @@ if __name__ == '__main__':
     getVideoDetail()
     getVideoLink()
     downloadVideo()
-
-
-
-
-
-
-'''
-response = requests.get('https://cn-bj3-cc-bcache-13.bilivideo.com/upgcxcode/84/77/405317784/405317784-1-30064.m4s', headers=headers, params=params)
-with open("test.mp4","wb") as fp:
-    fp.write(response.content)
-'''
